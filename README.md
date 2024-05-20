@@ -25,7 +25,7 @@ This project demonstrates how to deploy a Node.js backend API to a virtual machi
 1. **Clone the Repository**:
 
     ```bash
-    git clone https://gitfront.io/r/nitin1053/TKcwsh1smD5k/Cloud-test.git
+    git clone <repo_link>
     cd Cloud_test
     ```
 
@@ -46,7 +46,7 @@ This project demonstrates how to deploy a Node.js backend API to a virtual machi
 4. **Setup in VM**:
     ```bash
     sudo ssh -i $path of key $USERNAME@$HOST
-    git clone https://gitfront.io/r/nitin1053/TKcwsh1smD5k/Cloud-test.git
+    git clone <repo_link>
     cd Cloud_test
     npm install
 
