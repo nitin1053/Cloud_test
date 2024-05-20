@@ -60,6 +60,15 @@ The GitHub Actions workflow (`deploy.yml`) automates the deployment process. It 
 3. **Transfer Files**: Securely copies files to the VM using `scp`.
 4. **Deploy Application**: SSH into the VM, install dependencies, stop any existing process on port 80, and start the new instance of the application.
 
+
+Run the api on terminal
+```bash
+curl http://20.244.91.38/sayHello
+{"message":"Hello User"}
+
+Run on browser
+http://20.244.91.38/sayHello
+
 ### Workflow File: `.github/workflows/deploy.yml`
 
 ```yaml
@@ -95,12 +104,6 @@ jobs:
           sudo lsof -t -i:80 | xargs sudo kill -9 || true
           sudo nohup node index.js > app.log 2>&1 &
 
-Run the api on terminal
-```bash
-curl http://20.244.91.38/sayHello
-{"message":"Hello User"}
 
-Run on browser
-http://20.244.91.38/sayHello
 
 
