@@ -14,7 +14,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Install SSH client
-      run: sudo apt-get install openssh-client
+      run: sudo apt-get install -y openssh-client
 
     - name: Deploy to VM
       uses: appleboy/ssh-action@master
@@ -26,4 +26,5 @@ jobs:
         script: |
           cd Cloud_test
           npm install
-          sudo node index.js
+          sudo lsof -t -i:80 | xargs sudo kill -9 || true
+          sudo nohup node index.js > app.log 2>&1 &
