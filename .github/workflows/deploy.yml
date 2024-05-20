@@ -24,7 +24,6 @@ jobs:
         key: ${{ secrets.VM_SSH_KEY }}
         port: 22
         script: |
-          cd Cloud_test/
-          git pull origin master
+          cd Cloud_test
           npm install
           sudo node index.js
